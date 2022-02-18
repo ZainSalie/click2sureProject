@@ -11,7 +11,7 @@ this will build the backend and then create all tables required.
     docker-compose up
 This will launch the project and the app should be available on port 5000
 
-##Initialize Users and DB
+## Initialize Users and DB
 
 After project launches visit:
 
@@ -21,9 +21,9 @@ After project launches visit:
 * user1 will be an admin user while the rest will be regular users
 * passwords for all users is '**_click2sure_**'
 
-##How to use API
+## How to use API
 
-###Create Users
+### Create Users
 
     post localhost:5000/transaction/register/
     {
@@ -33,7 +33,7 @@ After project launches visit:
     }
 Success status code **201**
 
-###Create Credit account
+### Create Credit account
     post localhost:5000/transaction/credit/
         {
             'user_id': <_user_id_>
@@ -47,7 +47,7 @@ Success status code **201**
 * amount_owed is needed as well as balance
 * Balance which will be the difference between Max credit and amount owed
 
-###Create Savings account
+### Create Savings account
     post localhost:5000/transaction/savings/
         {
             'user_id': <_user_id_>
@@ -55,7 +55,7 @@ Success status code **201**
         }
 Success status code **201**
 
-###Transactions
+### Transactions
     post localhost:5000/transaction/
     {
         "user_id": <user_id>,
@@ -70,22 +70,22 @@ Success status code **201**
 * type should either "BUY" or "SELL" which is buying or depositing
 * source should be either "SAVINGS" or "CREDIT" which is the account you are transacting from
 
-###View transactions
+### View transactions
     get localhost:5000/transaction/<pk=id>
 Success status code **200**
 
-###View Savings account
+### View Savings account
     get localhost:5000/transaction/savings/<pk=id>
 Success status code **200**
 
-###View Credit account
+### View Credit account
     get localhost:5000/transaction/credit/<pk=id>
 Success status code **200**
 
 The three transactions above use the id to get specific information and is only accessible
 to admin users.
 
-###View All accounts and transactions
+### View All accounts and transactions
     get localhost:5000/transaction/view/
 Success status code **200**
 
