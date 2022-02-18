@@ -1,6 +1,6 @@
 # Project Guide
 
-This project uses Docker and docker-compose to start-up. To launch navigate to the main directory (click2sureDjango) and run:
+This project uses Docker and docker-compose to start-up. To launch navigate to the main directory (click2sureProject) and run:
 
     docker-compose build
     docker-compose run backend sh -c "python manage.py makemigrations"
